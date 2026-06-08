@@ -170,9 +170,9 @@
   background-color: var(--color-three);
 }
 .background-fundo{
-	background-image: url(../images/background-fundo2.jpg);
-	background-size: cover;
-	background-attachment: fixed;
+	background-image: url(../images/fundo.png);
+	
+	
 	
 }
 
