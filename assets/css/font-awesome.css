@@ -7402,8 +7402,6 @@ readers do not read off random characters that represent icons */
 .fa-dropbox:before {
   content: "\f16b"; }
 
-.fa-instagram:before {
-  content: "\f16d"; }
 
 .fa-cmplid:before {
   content: "\e360"; }
