@@ -1,0 +1,344 @@
+/* Responsivo geral */
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+.problema,
+.solucao {
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.problema-all,
+.solucao-all {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.problema-header,
+.solucao-header {
+    width: 100%;
+    max-width: 1450px;
+}
+
+.icon-loja,
+.img-soluc {
+    flex: 0 1 42%;
+    object-fit: contain;
+}
+
+.cont-problema,
+.cont-solucao {
+    flex: 1 1 520px;
+}
+
+.answer-one_image img,
+.slider-one_image img {
+    width: 100%;
+    height: auto;
+}
+
+.main-footer {
+    display: block;
+}
+
+@media only screen and (max-width: 1199px) {
+    .problema {
+        margin-top: -80px;
+    }
+
+    .problema-header,
+    .solucao-header {
+        margin-left: 0;
+    }
+
+    .problema-all,
+    .solucao-all {
+        gap: 32px;
+    }
+
+    .img-soluc {
+        width: 48%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .icon-loja {
+        width: 38%;
+    }
+
+    .slider-one_heading {
+        font-size: 44px;
+        line-height: 1.15;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #slider-one,
+    #problema,
+    #solucao,
+    #como-funciona,
+    #avaliacoes,
+    #para-quem,
+    #diferenciais,
+    #faq {
+        scroll-margin-top: 90px;
+    }
+
+    .anuncio h2 {
+        padding: 0 15px;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .slider-one_content-inner {
+        text-align: center;
+    }
+
+    .slider-one_button {
+        justify-content: center;
+    }
+
+    .slider-one_heading {
+        font-size: 38px;
+    }
+
+    .slider-one_text {
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slider-one_image-outer {
+        max-width: 620px;
+        margin: 55px auto 0;
+    }
+
+    .problema {
+        margin-top: 70px;
+    }
+
+    .solucao,
+    .choose-one {
+        margin-top: 90px;
+    }
+
+    .problema,
+    .solucao {
+        align-items: stretch;
+    }
+
+    .problema-all,
+    .solucao-all {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .solucao-all {
+        flex-direction: column-reverse;
+    }
+
+    .cont-problema,
+    .cont-solucao {
+        max-width: 100%;
+        flex-basis: auto;
+    }
+
+    .icon-loja,
+    .img-soluc {
+        width: 100%;
+        max-width: 560px;
+        flex-basis: auto;
+        align-self: center;
+    }
+
+    .answer-one_image {
+        margin-top: 35px;
+    }
+
+    .conteudo-steps h2 {
+        font-size: 21px;
+        line-height: 1.55;
+    }
+
+    .lista-price {
+        padding-left: 0;
+    }
+
+    .faq-one_button {
+        margin-bottom: 35px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .auto-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .slider-one_heading {
+        font-size: 32px;
+    }
+
+    .slider-one_text,
+    .cont-problema p,
+    .cont-solucao p,
+    .answer-one_list li,
+    .accordion-box_two .block .content .text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .template-btn {
+        width: 100%;
+        max-width: 360px;
+        text-align: center;
+    }
+
+    .template-btn .btn-wrap {
+        width: 100%;
+    }
+
+    .template-btn .btn-wrap .text-one,
+    .template-btn .btn-wrap .text-two {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        white-space: normal;
+        line-height: 1.35;
+    }
+
+    .problema,
+    .solucao {
+        width: 100%;
+    }
+
+    .problema-header h2,
+    .solucao-header h2 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .cont-problema h2 {
+        font-size: 21px;
+        line-height: 1.35;
+    }
+
+    .cont-solucao h2 {
+        font-size: 18px;
+        line-height: 1.45;
+    }
+
+    .linha {
+        width: 80%;
+        margin-top: 60px;
+    }
+
+    .choose-one .inner-container,
+    .testimonial-one .inner-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .counter-block_one-inner {
+        height: auto;
+        min-height: 260px;
+    }
+
+    .answer-one_list {
+        padding-left: 0;
+    }
+
+    .answer-one_list li {
+        padding-left: 34px;
+    }
+
+    .answer-one_list li i {
+        left: 0;
+    }
+
+    .testimonial-block_one-text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .conteudo-steps h2 {
+        font-size: 18px;
+    }
+
+    .lista-price li {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .accordion-box_two .block .acc-btn {
+        padding-right: 58px;
+        font-size: 16px;
+        line-height: 1.45;
+    }
+
+    .main-footer .footer-bottom .inner-container {
+        justify-content: center !important;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        width: 100%;
+        line-height: 1.6;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .slider-one_heading {
+        font-size: 28px;
+    }
+
+    .slider-one_image-outer {
+        margin-top: 35px;
+    }
+
+    .slider-one_graph,
+    .slider-one_percentage {
+        display: none;
+    }
+
+    .sec-title_heading {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .problema {
+        margin-top: 55px;
+    }
+
+    .solucao,
+    .choose-one {
+        margin-top: 70px;
+    }
+
+    .icon-loja,
+    .img-soluc {
+        max-width: 100%;
+    }
+
+    .cta-final_inner {
+        padding: 45px 18px;
+    }
+
+    .cta-final_inner::before {
+        inset: 10px;
+    }
+
+    .cta-final .sec-title_heading {
+        font-size: 26px;
+    }
+}
