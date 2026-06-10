@@ -11,6 +11,8 @@
 }
 
 
+
+
 .slider-one_heading {
     font-size: 4cqmin;
 }
@@ -49,7 +51,7 @@
 .problema-header {
     position: relative;
     z-index: 1;
-    margin-left: -850px;
+    
     
     
 }
@@ -111,7 +113,7 @@
     position: relative;
     z-index: 1;
     align-items: center;
-    margin-left: -1120px;
+    
     
 }
 
@@ -339,4 +341,9 @@
 }
 .btn-style-two:before{
     background-color: #a0dfff;
+}
+
+
+.footer-copyright a{
+    color: #00A8FF;
 }

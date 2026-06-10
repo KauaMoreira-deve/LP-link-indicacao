@@ -171,9 +171,16 @@ body {
 	font-weight:400;
 	font-size:14px;
 	
-
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
+}
+
+.background-fixed{
+	background-color: #f1f1f1;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
