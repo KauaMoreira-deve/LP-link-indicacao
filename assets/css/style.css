@@ -431,7 +431,7 @@
 	left: 10px;
 	top: 30px;
 	font-size: 20px;
-	color: var(--main-color);
+	color: #2e2e2e;
 }
 
 .slider-one_percentage::before {
@@ -441,7 +441,7 @@
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
-	background: url(../images/main-slider/percentage-bg.png);
+	
 	background-size: cover;
 }
 
@@ -457,7 +457,7 @@
 	-moz-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	--base-gradient: linear-gradient(to right, blue 0%, blue 100%);
+	--base-gradient: linear-gradient(to right,#a0dfff 0%, #4bc3ff 100%);
 }
 
 .slider-one_percentage .slider-one_percent sub {
@@ -482,7 +482,7 @@
 	-moz-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	--base-gradient: linear-gradient(to right, var(--main-color) 0%, var(--color-five) 100%);
+	--base-gradient: linear-gradient(to right, #a0dfff 0%, #4bc3ff 100%);
 }
 
 /*** 
