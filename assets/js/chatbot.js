@@ -247,6 +247,7 @@
       deliverAnswer(group.questions[0]);
       return;
     }
+    
 
     step = 'questions';
     setActionBar(true, true);

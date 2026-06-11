@@ -9,8 +9,10 @@
     font-size: 16px;
     font-weight: 500;
 }
-
-
+/* TELA DE CARREGAMENTO */
+.handle-preloader{
+    background-color: #00A8FF;
+}
 
 
 .slider-one_heading {
@@ -323,6 +325,12 @@
     align-items: center;
 }
 
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-style-two .btn-wrap .text-one{
     color: #2e2e2e;
 }
@@ -346,4 +354,13 @@
 
 .footer-copyright a{
     color: #00A8FF;
+}
+
+.cursor{
+    background-color: #00A8FF;
+}
+
+
+.cursor-follower{
+    border: #00A8FF 2px solid;
 }
