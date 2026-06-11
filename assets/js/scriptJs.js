@@ -17,7 +17,7 @@ whatsappBtn.addEventListener('click', () => {
 
     const mensagem = `Olá, ${saudacao}! Gostaria de saber mais sobre o link de indicação?`;
    
-    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    const link = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensagem)}`;
 
     window.open(link, "_blank");
 });
