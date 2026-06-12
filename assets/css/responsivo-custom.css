@@ -51,8 +51,23 @@ img {
 }
 
 @media only screen and (max-width: 1199px) {
+    .hero div h2{
+        font-size: 20px;
+        color: black;
+        
+    }
+    .hero div p{
+        font-size: 10px;
+        color: black;
+        
+    }
+
     .problema {
         margin-top: -80px;
+    }
+
+    .auto-container {
+        margin-top: -100px;
     }
 
     .problema-header,
@@ -82,6 +97,7 @@ img {
 }
 
 @media only screen and (max-width: 991px) {
+
     #slider-one,
     #problema,
     #solucao,
@@ -97,6 +113,10 @@ img {
         padding: 0 15px;
         font-size: 14px;
         line-height: 1.45;
+    }
+
+    .auto-container {
+        margin-top: -100px;
     }
 
     .slider-one_content-inner {
@@ -186,6 +206,10 @@ img {
 
     .slider-one_heading {
         font-size: 32px;
+    }
+
+    .auto-container {
+        margin-top: -100px;
     }
 
     .slider-one_text,
@@ -300,6 +324,10 @@ img {
 @media only screen and (max-width: 575px) {
     .slider-one_heading {
         font-size: 28px;
+    }
+
+    .auto-container {
+        margin-top: -100px;
     }
 
     .slider-one_image-outer {

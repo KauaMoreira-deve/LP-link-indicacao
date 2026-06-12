@@ -426,88 +426,11 @@
 		slidesPerView: 1,
 		spaceBetween: 0,
 		loop: true,
-		autoplay: {
-			enabled: true,
-			delay: 6000
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.main-slider-next',
-			prevEl: '.main-slider-prev',
-			clickable: true,
-		},
-		//Pagination
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-		speed: 500,
-		breakpoints: {
-			'1600': {
-				slidesPerView: 1,
-			},
-			'1200': {
-				slidesPerView: 1,
-			},
-			'992': {
-				slidesPerView: 1,
-			},
-			'768': {
-				slidesPerView: 1,
-			},
-			'576': {
-				slidesPerView: 1,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
+		
 	});
 
 
 
-	// Single One Slider
-	var slider = new Swiper('.single-item_carousel', {
-		slidesPerView: 1,
-		spaceBetween: 0,
-		loop: true,
-		autoplay: {
-			enabled: true,
-			delay: 6000
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.single-item_carousel-next',
-			prevEl: '.single-item_carousel-prev',
-			clickable: true,
-		},
-		//Pagination
-		pagination: {
-			el: ".single-item_carousel-pagination",
-			clickable: true,
-		},
-		speed: 500,
-		breakpoints: {
-			'1600': {
-				slidesPerView: 1,
-			},
-			'1200': {
-				slidesPerView: 1,
-			},
-			'992': {
-				slidesPerView: 1,
-			},
-			'768': {
-				slidesPerView: 1,
-			},
-			'576': {
-				slidesPerView: 1,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-	});
 
 
 
@@ -517,45 +440,7 @@
 		slidesPerView: 3,
 		spaceBetween: 30,
 		loop: true,
-		autoplay: {
-			enabled: true,
-			delay: 6000
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.three-item_carousel-next',
-			prevEl: '.three-item_carousel-prev',
-			clickable: true,
-		},
-		//Pagination
-		pagination: {
-			el: ".three-item_carousel-pagination",
-			clickable: true,
-		},
-		speed: 500,
-		breakpoints: {
-			'1600': {
-				slidesPerView: 3,
-			},
-			'1200': {
-				slidesPerView: 3,
-			},
-			'992': {
-				slidesPerView: 3,
-			},
-			'768': {
-				slidesPerView: 2,
-			},
-			'600': {
-				slidesPerView: 1,
-			},
-			'576': {
-				slidesPerView: 1,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
+		
 	});
 
 
@@ -565,7 +450,7 @@
 	var slider = new Swiper('.team-carousel', {
 		slidesPerView: 2,
 		spaceBetween: 30,
-		loop: true,
+		loop: false,
 		autoplay: {
 			enabled: true,
 			delay: 6000
@@ -622,7 +507,7 @@
 		navigation: {
 			nextEl: '.clients_slider-button-next',
 			prevEl: '.clients_slider-button-prev',
-			clickable: true,
+			clickable: false,
 		},
 		//Pagination
 		pagination: {

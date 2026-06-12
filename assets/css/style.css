@@ -93,11 +93,7 @@
 
 
 
-.slider-one .swiper-slide {
-	position: relative;
-	overflow: hidden;
-	padding: 200px 0px 380px;
-}
+
 
 .slider-one_pattern {
 	position: absolute;
@@ -188,8 +184,12 @@
 
 .slider-one_content-inner {
 	position: relative;
-	margin-top: 80px;
-
+	margin-top: 180px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 }
 
