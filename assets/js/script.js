@@ -436,11 +436,30 @@
 
 
 	// Three Items Slider
+	// Claude + Arthur: adicionados breakpoints responsivos e paginação por pontos.
+	// Sem breakpoints o Swiper exibia 3 slides espremidos no mobile, cortando o texto.
 	var slider = new Swiper('.three-item_carousel', {
 		slidesPerView: 3,
 		spaceBetween: 30,
 		loop: true,
-		
+		pagination: {
+			el: '.three-item_carousel-pagination',
+			clickable: true,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+				spaceBetween: 0,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+		},
 	});
 
 

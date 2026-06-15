@@ -71,6 +71,20 @@ img {
 }
 
 /* ─────────────────────────────────────────
+   Cursor customizado — esconde em touch/mobile
+   Claude + Arthur: o cursor TweenMax (dot laranja) fica preso no
+   canto em dispositivos touch porque não existe evento mousemove.
+   @media (hover: none) detecta telas sem hover real (touch).
+   max-width: 991px garante cobertura em tablets que reportam hover.
+───────────────────────────────────────── */
+@media (hover: none), only screen and (max-width: 991px) {
+    .cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+}
+
+/* ─────────────────────────────────────────
    1199 px  —  Notebook / Tablet landscape
 ───────────────────────────────────────── */
 @media only screen and (max-width: 1199px) {
@@ -160,6 +174,14 @@ img {
     #diferenciais,
     #faq {
         scroll-margin-top: 90px;
+    }
+
+    /* Header — esconde o botão WhatsApp do cabeçalho em mobile */
+    /* Claude + Arthur: no mobile a regra width:100% em .template-btn
+       quebra o flex do outer-box e joga o hamburger para baixo.
+       Escondemos o botão do header; os CTAs da página suprem o acesso. */
+    .main-header .main-header_buttons {
+        display: none;
     }
 
     .anuncio h2 {
@@ -407,6 +429,48 @@ img {
     .footer-copyright {
         width: 100%;
         line-height: 1.6;
+    }
+
+    /* Footer — remove margem negativa que sobrepõe o CTA no mobile */
+    /* Claude + Arthur: footer.css tem margin-top: -100px; no desktop isso
+       funciona como efeito visual. No mobile, causa sobreposição com o CTA. */
+    .main-footer {
+        margin-top: 0 !important;
+    }
+
+    /* "Para quem é" — segura o bg absoluto e adiciona espaço inferior */
+    /* Claude + Arthur: overflow:hidden segura .steps-one_bg dentro da seção.
+       padding-bottom extra evita que o texto da lista fique "dentro" do card
+       escuro de Diferenciais logo abaixo (que começa sem margem). */
+    .steps-one {
+        overflow: hidden;
+        padding-bottom: 80px;
+    }
+
+    /* Diferenciais — padding interno excessivo do template no mobile */
+    .price-one .inner-container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    /* Hero: retira o vídeo no mobile para economizar dados e bateria */
+    /* Claude + Arthur: .banner::before (overlay escuro rgba 46,46,46,0.55)
+       continua visível — o texto branco do hero permanece legível.
+       .slider-one recebe min-height para o overlay ter área para preencher. */
+    .banner video {
+        display: none;
+    }
+
+    .slider-one {
+        min-height: 280px;
+    }
+
+    .banner {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 280px;
     }
 }
 
