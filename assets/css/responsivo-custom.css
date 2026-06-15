@@ -114,7 +114,7 @@ only screen and (max-width: 991px) {
         margin-top: 200px;
     }
 
-    .auto-container {
+    .header-lower.auto-container {
         margin-top: -100px;
     }
 
@@ -209,7 +209,7 @@ only screen and (max-width: 991px) {
         line-height: 1.45;
     }
 
-    .auto-container {
+     .header-lower .auto-container {
         margin-top: -100px;
     }
 
@@ -349,7 +349,7 @@ only screen and (max-width: 991px) {
         display: none;
     }
 
-    .auto-container {
+    .header-lower .auto-container {
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -358,8 +358,8 @@ only screen and (max-width: 991px) {
         font-size: 32px;
     }
 
-    .auto-container {
-        margin-top: -100px;
+    .header-lower {
+        display: none;
     }
 
     .slider-one_text,
@@ -524,10 +524,12 @@ only screen and (max-width: 991px) {
 ───────────────────────────────────────── */
 @media only screen and (max-width: 575px) {
     .mobile-nav-toggler {
-        margin-top: 105px;
+        
         background-color: rgb(24, 24, 24);
         border-radius: 5px;
     }
+
+  
 
     /* Hero — vídeo tem ~323 px; hero deve ficar dentro */
     .slider-one {
@@ -555,9 +557,11 @@ only screen and (max-width: 991px) {
         font-size: 28px;
     }
 
-    .auto-container {
-        margin-top: -190px;
+    .price-one .auto-container{
+        margin-top: 50px;
     }
+
+    
 
     .slider-one_image-outer {
         margin-top: 35px;
@@ -645,10 +649,12 @@ only screen and (max-width: 991px) {
 ───────────────────────────────────────── */
 @media only screen and (max-width: 480px) {
     .mobile-nav-toggler {
-        margin-top: 105px;
+       
         background-color: rgb(24, 24, 24);
         border-radius: 5px;
     }
+
+   
 
     /* Hero — vídeo tem ~270 px; mantém dentro da área */
 
@@ -696,6 +702,10 @@ only screen and (max-width: 991px) {
         font-size: 13px;
     }
 
+    .answer-one .auto-container{
+        margin-top: 190px;
+    }
+
     .numero {
         min-width: 36px;
         height: 36px;
@@ -721,9 +731,10 @@ only screen and (max-width: 991px) {
 
     /* COMO FUNCIONA */
     #como-funciona {
-        margin-top: 100px;
+        margin-top: 180px;
     }
 
+    
     /* Seção "Para quem é" */
     .conteudo-steps h2 {
         font-size: 16px;
@@ -769,7 +780,7 @@ only screen and (max-width: 991px) {
     }
 
     .footer-copyright{
-        margin-top: 100px;
+        margin-top: 0px;
     }
 }
 @media only screen and (max-width: 430px) {
@@ -939,7 +950,7 @@ only screen and (max-width: 991px) {
     }
 
     /* Geral */
-    .auto-container {
+    .header-lower .auto-container {
         padding-left: 12px;
         padding-right: 12px;
     }
