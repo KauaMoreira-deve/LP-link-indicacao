@@ -90,14 +90,16 @@ only screen and (max-width: 991px) {
    1199 px  —  Notebook / Tablet landscape
 ───────────────────────────────────────── */
 @media only screen and (max-width: 1199px) {
-
+    .header-lower{
+        margin-top: 100px;
+    }
     /* Hero — reduz margem conforme o vídeo encolhe */
     .hero {
         margin-top: 260px;
     }
 
     .hero div h2 {
-        font-size: 20px;
+        font-size: 31px;
         color: rgb(255, 255, 255);
     }
 
@@ -126,9 +128,7 @@ only screen and (max-width: 991px) {
         gap: 32px;
     }
 
-    .etapas{
-        
-    }
+    .etapas {}
 
     .img-soluc {
         width: 48%;
@@ -169,6 +169,7 @@ only screen and (max-width: 991px) {
         font-size: 30px;
         color: aliceblue;
     }
+
     .hero div p {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -191,7 +192,7 @@ only screen and (max-width: 991px) {
     #diferenciais,
     #faq {
         scroll-margin-top: 90px;
-        
+
     }
 
     /* Header — esconde o botão WhatsApp do cabeçalho em mobile */
@@ -223,7 +224,8 @@ only screen and (max-width: 991px) {
     .slider-one_heading {
         font-size: 38px;
     }
-    .problema-all{
+
+    .problema-all {
         align-items: center !important;
     }
 
@@ -294,6 +296,10 @@ only screen and (max-width: 991px) {
     .faq-one_button {
         margin-bottom: 35px;
     }
+
+    .footer-copyright{
+        margin-top: 100px;
+    }
 }
 
 /* ─────────────────────────────────────────
@@ -306,7 +312,7 @@ only screen and (max-width: 991px) {
 ───────────────────────────────────────── */
 @media only screen and (max-width: 767px) {
     .mobile-nav-toggler {
-        margin-top: 105px;
+        margin-top: 115px;
         background-color: rgb(24, 24, 24);
         border-radius: 5px;
     }
@@ -317,18 +323,20 @@ only screen and (max-width: 991px) {
     }
 
     .hero {
-        margin-top: 40px;
+        margin-top: 150px;
         padding: 0 18px;
     }
 
     .hero div h2 {
-        font-size: 22px;
+        color: #2e2e2e;
+        font-size: 32px;
         line-height: 1.35;
         text-align: center;
     }
 
     .hero div p {
-        font-size: 11px;
+        color: #2e2e2e;
+        font-size: 20px;
         text-align: center;
         margin-top: 16px;
         margin-bottom: 20px;
@@ -527,16 +535,18 @@ only screen and (max-width: 991px) {
     }
 
     .hero {
-        margin-top: 70px;
+        margin-top: 90px !important;
         padding: 0 14px;
     }
 
     .hero div h2 {
-        font-size: 22px;
+        color: #2e2e2e;
+        font-size: 32px;
     }
 
     .hero div p {
-        font-size: 11px;
+        color: #2e2e2e;
+        font-size: 18px;
         margin-top: 12px;
         margin-bottom: 16px;
     }
@@ -546,7 +556,7 @@ only screen and (max-width: 991px) {
     }
 
     .auto-container {
-        margin-top: -100px;
+        margin-top: -190px;
     }
 
     .slider-one_image-outer {
@@ -564,7 +574,7 @@ only screen and (max-width: 991px) {
     }
 
     .problema {
-        margin-top: 55px;
+        margin-top: 175px !important;
     }
 
     .solucao,
@@ -619,6 +629,10 @@ only screen and (max-width: 991px) {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .footer-copyright{
+        margin-top: 100px;
+    }
 }
 
 /* ─────────────────────────────────────────
@@ -643,19 +657,25 @@ only screen and (max-width: 991px) {
     }
 
     .hero {
-        margin-top: 50px;
+        margin-top: 150px;
         padding: 0 12px;
     }
 
     .hero div h2 {
-        font-size: 20px;
+        font-size: 30px;
         line-height: 1.3;
+        color: #2e2e2e;
     }
 
     .hero div p {
-        font-size: 10px;
-        margin-top: 10px;
+        color: #2e2e2e;
+        font-size: 15px;
+        margin-top: 15px;
         margin-bottom: 14px;
+    }
+
+    .problema{
+        margin-top: 200px !important;
     }
 
     /* Etapas */
@@ -747,7 +767,141 @@ only screen and (max-width: 991px) {
     .linha {
         margin-top: 44px;
     }
+
+    .footer-copyright{
+        margin-top: 100px;
+    }
 }
+@media only screen and (max-width: 430px) {
+    .mobile-nav-toggler {
+        margin-top: 105px;
+        background-color: rgb(24, 24, 24);
+        border-radius: 5px;
+    }
+
+    /* Hero — vídeo tem ~270 px; mantém dentro da área */
+
+    .slider-one {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 150px;
+        padding: 0 12px;
+    }
+
+    .hero div h2 {
+        font-size: 30px;
+        line-height: 1.3;
+        color: #2e2e2e;
+    }
+
+    .hero div p {
+        color: #2e2e2e;
+        font-size: 15px;
+        margin-top: 15px;
+        margin-bottom: 14px;
+    }
+
+    .problema{
+        margin-top: 200px !important;
+    }
+
+    /* Etapas */
+    .etapas {
+        padding: 50px 14px;
+    }
+
+    .etapas .container h2 {
+        font-size: 24px;
+        margin-bottom: 36px;
+    }
+
+    .conteudo h3 {
+        font-size: 16px;
+    }
+
+    .conteudo p {
+        font-size: 13px;
+    }
+
+    .numero {
+        min-width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .passo {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .personalizavel {
+        padding: 12px;
+    }
+
+    .personalizavel h3 {
+        font-size: 18px;
+    }
+
+    .personalizavel p {
+        font-size: 14px;
+    }
+
+    /* COMO FUNCIONA */
+    #como-funciona {
+        margin-top: 100px;
+    }
+
+    /* Seção "Para quem é" */
+    .conteudo-steps h2 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* FAQ */
+    .accordion-box_two .block .acc-btn {
+        font-size: 15px;
+    }
+
+    /* Imagens sempre fluidas */
+    .icon-loja,
+    .img-soluc {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    /* Título de seção */
+    .sec-title_heading {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .counter-block_one-inner {
+        min-height: unset;
+        padding: 24px 16px;
+    }
+
+    /* Espaçamentos verticais */
+    .solucao,
+    .choose-one {
+        margin-top: 56px;
+    }
+
+    .problema {
+        margin-top: 44px;
+    }
+
+    .linha {
+        margin-top: 44px;
+    }
+
+    .footer-copyright{
+        margin-top: 100px;
+    }
+}
+
 
 /* ─────────────────────────────────────────
    360 px  —  Smartphones muito pequenos
@@ -756,6 +910,7 @@ only screen and (max-width: 991px) {
    Foco: tipografia mínima legível, hero com margem mínima,
    botões e cards de etapa no menor tamanho ainda usável.
 ───────────────────────────────────────── */
+
 @media only screen and (max-width: 360px) {
 
     /* MENU MOBILE */
@@ -767,18 +922,20 @@ only screen and (max-width: 991px) {
 
     /* Hero */
     .hero {
-        margin-top: 30px;
+        margin-top: 150px;
         padding: 0 10px;
     }
 
     .hero div h2 {
-        font-size: 18px;
+        font-size: 25px;
+        color: #2e2e2e;
     }
 
     .hero div p {
-        font-size: 10px;
+        color: #2e2e2e;
+        font-size: 15px;
         margin-top: 10px;
-        margin-bottom: 12px;
+        margin-bottom: 18px;
     }
 
     /* Geral */

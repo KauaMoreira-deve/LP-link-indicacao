@@ -31,7 +31,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.utils.toArray("section").forEach((section) => {
 
     const elementos = section.querySelectorAll(
-        "h2, h3, p, img, .btn-style-two .btn-wrap"
+        "img, .btn-style-two .btn-wrap"
     );
 
     gsap.from(elementos, {
