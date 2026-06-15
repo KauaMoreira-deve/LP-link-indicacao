@@ -2,7 +2,7 @@ const whatsappBtn = document.querySelectorAll('.whatsapp-btn');
 
 whatsappBtn.forEach(btn => {
     btn.addEventListener('click', () => {
-        const phoneNumber = '55991999999'; // Substitua pelo número de telefone desejado
+        const phoneNumber = '11932153865'; // Substitua pelo número de telefone desejado
 
         const horaAtual = new Date().getHours();
 
