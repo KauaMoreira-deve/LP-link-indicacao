@@ -1,4 +1,23 @@
-/* Responsivo geral */
+/* =============================================================
+   RESPONSIVO CUSTOMIZADO — responsivo-custom.css
+   Criado por: Claude (IA) + Arthur
+   -
+   Descrição: Regras responsivas do site inteiro (exceto chatbot).
+   Afeta apenas espaçamentos, tamanhos de fonte e visibilidade —
+   ZERO alteração de cores, backgrounds ou estrutura de layout.
+   -
+   Breakpoints cobertos:
+     1199px  Notebook / Tablet landscape
+      991px  Tablet retrato
+      767px  Mobile landscape / phablets
+      575px  Mobile retrato padrão
+      480px  Smartphones pequenos/médios  ← adicionado por Claude + Arthur
+      360px  Smartphones muito pequenos   ← adicionado por Claude + Arthur
+   -
+   ATENÇÃO: os breakpoints 480px e 360px são novos.
+   Os demais existiam antes e foram expandidos com regras faltantes
+   (hero margin-top, img-soluc height:auto, br display:none etc.).
+   ============================================================= */
 
 html {
     scroll-behavior: smooth;
@@ -8,6 +27,7 @@ img {
     max-width: 100%;
 }
 
+/* Utilitários base — regras que valem em todos os tamanhos de tela */
 .problema,
 .solucao {
     width: calc(100% - 30px);
@@ -50,16 +70,26 @@ img {
     display: block;
 }
 
+/* ─────────────────────────────────────────
+   1199 px  —  Notebook / Tablet landscape
+───────────────────────────────────────── */
 @media only screen and (max-width: 1199px) {
-    .hero div h2{
+
+    /* Hero — reduz margem conforme o vídeo encolhe */
+    .hero {
+        margin-top: 260px;
+    }
+
+    .hero div h2 {
         font-size: 20px;
         color: black;
-        
     }
-    .hero div p{
+
+    .hero div p {
         font-size: 10px;
         color: black;
-        
+        margin-top: 28px;
+        margin-bottom: 28px;
     }
 
     .problema {
@@ -82,7 +112,7 @@ img {
 
     .img-soluc {
         width: 48%;
-        height: auto;
+        height: auto;          /* evita distorção */
         margin-left: 0;
     }
 
@@ -96,8 +126,31 @@ img {
     }
 }
 
+/* ─────────────────────────────────────────
+   991 px  —  Tablet retrato
+   Claude + Arthur: adicionamos .hero margin-top, .banner width:100%,
+   e height:auto em .img-soluc (corrigia distorção da imagem que
+   ficava travada em 300px de altura pelo estilo base do estilo.css).
+───────────────────────────────────────── */
 @media only screen and (max-width: 991px) {
 
+    /* Hero */
+    .hero {
+        margin-top: 200px;
+    }
+
+    .hero div p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Vídeo banner: garante largura total */
+    .banner {
+        width: 100%;
+        left: 0;
+    }
+
+    /* Seção âncoras com espaço do header fixo */
     #slider-one,
     #problema,
     #solucao,
@@ -176,6 +229,7 @@ img {
     .img-soluc {
         width: 100%;
         max-width: 560px;
+        height: auto;          /* corrige altura fixa de 300px do estilo base */
         flex-basis: auto;
         align-self: center;
     }
@@ -198,7 +252,42 @@ img {
     }
 }
 
+/* ─────────────────────────────────────────
+   767 px  —  Mobile landscape / phablets
+   Claude + Arthur: adicionamos .hero margin-top calibrado para o
+   tamanho real do vídeo em cada viewport, padding no hero,
+   e display:none nos <br> forçados dos headings (ex: "Feito para
+   negócios que <br>dependem de confiança") para que o texto
+   quebre naturalmente em vez de criar espaços vazios no mobile.
+───────────────────────────────────────── */
 @media only screen and (max-width: 767px) {
+
+    /* Hero */
+    .hero {
+        margin-top: 130px;
+        padding: 0 18px;
+    }
+
+    .hero div h2 {
+        font-size: 18px;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .hero div p {
+        font-size: 13px;
+        text-align: center;
+        margin-top: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Oculta quebras de linha forçadas — o texto se reajusta sozinho */
+    .hero div h2 br,
+    .sec-title_heading br,
+    .conteudo-steps h2 br {
+        display: none;
+    }
+
     .auto-container {
         padding-left: 18px;
         padding-right: 18px;
@@ -321,7 +410,29 @@ img {
     }
 }
 
+/* ─────────────────────────────────────────
+   575 px  —  Mobile retrato (padrão)
+   Claude + Arthur: expandimos o bloco original com ajustes
+   nas seções de Etapas, botões centralizados e hero margin-top.
+───────────────────────────────────────── */
 @media only screen and (max-width: 575px) {
+
+    /* Hero — vídeo tem ~323 px; hero deve ficar dentro */
+    .hero {
+        margin-top: 70px;
+        padding: 0 14px;
+    }
+
+    .hero div h2 {
+        font-size: 16px;
+    }
+
+    .hero div p {
+        font-size: 13px;
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+
     .slider-one_heading {
         font-size: 28px;
     }
@@ -368,5 +479,245 @@ img {
 
     .cta-final .sec-title_heading {
         font-size: 26px;
+    }
+
+    /* Etapas */
+    .etapas .container h2 {
+        font-size: 28px;
+    }
+
+    .conteudo h3 {
+        font-size: 19px;
+    }
+
+    .conteudo p {
+        font-size: 14px;
+    }
+
+    .personalizavel h3 {
+        font-size: 21px;
+    }
+
+    .personalizavel p {
+        font-size: 15px;
+    }
+
+    /* Botões centralizados */
+    .template-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ─────────────────────────────────────────
+   480 px  —  Smartphones pequenos / médios
+   NOVO — adicionado por Claude + Arthur.
+   Cobre iPhones SE, Galaxy A, Moto G e similares.
+   Foco: hero dentro da área do vídeo (~270px de altura),
+   etapas compactas com touch targets confortáveis,
+   imagens sempre fluidas e espaçamentos verticais reduzidos.
+───────────────────────────────────────── */
+@media only screen and (max-width: 480px) {
+
+    /* Hero — vídeo tem ~270 px; mantém dentro da área */
+    .hero {
+        margin-top: 50px;
+        padding: 0 12px;
+    }
+
+    .hero div h2 {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .hero div p {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 14px;
+    }
+
+    /* Etapas */
+    .etapas {
+        padding: 50px 14px;
+    }
+
+    .etapas .container h2 {
+        font-size: 24px;
+        margin-bottom: 36px;
+    }
+
+    .conteudo h3 {
+        font-size: 16px;
+    }
+
+    .conteudo p {
+        font-size: 13px;
+    }
+
+    .numero {
+        min-width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .passo {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .personalizavel {
+        padding: 12px;
+    }
+
+    .personalizavel h3 {
+        font-size: 18px;
+    }
+
+    .personalizavel p {
+        font-size: 14px;
+    }
+
+    /* Seção "Para quem é" */
+    .conteudo-steps h2 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* FAQ */
+    .accordion-box_two .block .acc-btn {
+        font-size: 15px;
+    }
+
+    /* Imagens sempre fluidas */
+    .icon-loja,
+    .img-soluc {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    /* Título de seção */
+    .sec-title_heading {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .counter-block_one-inner {
+        min-height: unset;
+        padding: 24px 16px;
+    }
+
+    /* Espaçamentos verticais */
+    .solucao,
+    .choose-one {
+        margin-top: 56px;
+    }
+
+    .problema {
+        margin-top: 44px;
+    }
+
+    .linha {
+        margin-top: 44px;
+    }
+}
+
+/* ─────────────────────────────────────────
+   360 px  —  Smartphones muito pequenos
+   NOVO — adicionado por Claude + Arthur.
+   Cobre Galaxy A01, iPhone 5/SE 1ª gen e telas de 320–360px.
+   Foco: tipografia mínima legível, hero com margem mínima,
+   botões e cards de etapa no menor tamanho ainda usável.
+───────────────────────────────────────── */
+@media only screen and (max-width: 360px) {
+
+    /* Hero */
+    .hero {
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+
+    .hero div h2 {
+        font-size: 14px;
+    }
+
+    .hero div p {
+        font-size: 12px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    /* Geral */
+    .auto-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .sec-title_heading {
+        font-size: 22px;
+    }
+
+    .slider-one_heading {
+        font-size: 24px;
+    }
+
+    /* Etapas */
+    .etapas .container h2 {
+        font-size: 21px;
+    }
+
+    .conteudo h3 {
+        font-size: 15px;
+    }
+
+    .passo {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .numero {
+        min-width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    /* Botão CTA */
+    .template-btn .btn-wrap .text-one,
+    .template-btn .btn-wrap .text-two {
+        font-size: 14px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    /* CTA final */
+    .cta-final_inner {
+        padding: 36px 14px;
+    }
+
+    .cta-final_inner::before {
+        inset: 7px;
+    }
+
+    .cta-final .sec-title_heading {
+        font-size: 22px;
+    }
+
+    .cta-final_text {
+        font-size: 15px;
+    }
+
+    /* Problema / Solução */
+    .cont-problema h2 {
+        font-size: 18px;
+    }
+
+    .cont-solucao h2 {
+        font-size: 16px;
+    }
+
+    .cont-problema p,
+    .cont-solucao p {
+        font-size: 14px;
+        line-height: 1.65;
     }
 }

@@ -1,4 +1,22 @@
-/* ===== CHATBOT WIDGET ===== */
+/* =============================================================
+   CHATBOT WIDGET — chatbot.js
+   Criado por: Claude (IA) + Arthur
+   -
+   Descrição: Lógica completa do assistente virtual.
+   -
+   Fluxo da conversa:
+     1. Bot pede o nome do usuário
+     2. Exibe 3 grupos de tópicos (cards clicáveis)
+     3. Dentro do grupo, exibe chips com as perguntas
+     4. Exibe a resposta; perguntas de preço redirecionam
+        para o WhatsApp com mensagem pré-preenchida
+     5. Botão "← Voltar" retorna aos grupos
+     6. Botão "Encerrar conversa" reseta tudo após 2s
+   -
+   Para adicionar/editar perguntas: mexa apenas no array GROUPS.
+   Para trocar o número do WhatsApp: altere WHATSAPP_NUMBER.
+   NÃO edite este arquivo sem avisar o Arthur.
+   ============================================================= */
 (function () {
   'use strict';
 
@@ -7,7 +25,12 @@
   var WHATSAPP_NUMBER = '5511932153865';
   /* ------------------------------------------------------------------ */
 
-  /* ---------- Base de conhecimento em grupos ---------- */
+  /* ---------- Base de conhecimento em grupos ----------
+     Arthur: edite as perguntas e respostas aqui.
+     Cada grupo tem: icon (emoji), title, desc e um array de questions.
+     Cada question tem: q (pergunta exibida) e a (resposta em texto).
+     Se a === null, o chat redireciona para o WhatsApp automaticamente.
+     --------------------------------------------------------- */
   var GROUPS = [
     {
       icon: '🔍',
@@ -88,11 +111,22 @@
     return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
   }
 
-  /* ---------- Estado da conversa ---------- */
+  /* ---------- Estado da conversa ----------
+     userName: salva o primeiro nome digitado para personalizar as mensagens.
+     isDark: controla o tema claro/escuro (toggled pelo botão no header).
+     step: rastreia em qual etapa do fluxo o usuário está.
+       'name'     → aguardando o usuário digitar o nome
+       'groups'   → exibindo os 3 grupos de tópicos
+       'questions'→ exibindo perguntas de um grupo específico
+       'answered' → exibindo a resposta de uma pergunta
+     --------------------------------------------------------- */
   var userName = '';
   var isDark   = false;
 
-  /* ---------- HTML do widget ---------- */
+  /* ---------- HTML do widget ----------
+     Todo o markup do chatbot é gerado aqui via JS e injetado
+     no <body> — assim não interferimos no HTML do seu amigo.
+     --------------------------------------------------------- */
   var wrapper = document.createElement('div');
   wrapper.id = 'chatbot-wrapper';
   wrapper.innerHTML = [
@@ -151,7 +185,10 @@
   var badge     = document.getElementById('chatbot-badge');
   var themeBtn  = document.getElementById('cb-theme-btn');
 
-  /* ---------- Tema ---------- */
+  /* ---------- Tema claro / escuro ----------
+     Alterna a classe .dark na janela do chat.
+     Todas as cores são CSS vars — não há hardcode aqui.
+     --------------------------------------------------------- */
   themeBtn.addEventListener('click', function () {
     isDark = !isDark;
     chatWin.classList.toggle('dark', isDark);
@@ -159,7 +196,10 @@
     themeBtn.querySelector('.cb-theme-label').textContent = isDark ? 'Claro' : 'Escuro';
   });
 
-  /* ---------- Balão de chamada ---------- */
+  /* ---------- Balão de chamada ----------
+     Aparece ao carregar (showBubble) e se repete a cada 20s.
+     Some sozinho após 6s. Clicar nele abre o chat.
+     --------------------------------------------------------- */
   var bubbleTimer;
   function showBubble() {
     bubble.style.display = 'block';
@@ -189,7 +229,12 @@
     }
   });
 
-  /* ---------- Fluxo de etapas ---------- */
+  /* ---------- Fluxo de etapas ----------
+     startConversation → pede o nome
+     showGroups        → exibe os 3 cards de categoria
+     selectGroup       → exibe os chips de pergunta do grupo
+     deliverAnswer     → exibe a resposta (ou botão WhatsApp se a === null)
+     --------------------------------------------------------- */
   /* step: 'name' | 'groups' | 'questions' | 'answered' */
   var step          = 'name';
   var activeGroup   = null;
@@ -296,7 +341,12 @@
     }, 380);
   }
 
-  /* ---------- Barra de ações ---------- */
+  /* ---------- Barra de ações (Voltar / Encerrar) ----------
+     setActionBar(showBack, showEnd): controla visibilidade dos botões.
+     "← Voltar" retorna para showGroups().
+     "Encerrar conversa": mostra despedida, desabilita input por 2s,
+     depois limpa tudo e reinicia startConversation() — mantém a LP leve.
+     --------------------------------------------------------- */
   function setActionBar(showBack, showEnd) {
     backBtn.style.visibility = showBack ? 'visible' : 'hidden';
     endBtn.style.visibility  = showEnd  ? 'visible' : 'hidden';
@@ -326,7 +376,11 @@
     }, 2200);
   });
 
-  /* ---------- Envio por digitação (só para etapa de nome por padrão) ---------- */
+  /* ---------- Envio por digitação ----------
+     Na etapa 'name': captura o primeiro nome e avança para showGroups().
+     Nas demais etapas: tenta encontrar uma pergunta cujas palavras
+     batem com o que o usuário digitou. Se não achar, volta para os grupos.
+     --------------------------------------------------------- */
   function handleSend() {
     var text = input.value.trim();
     if (!text) return;

@@ -1,4 +1,16 @@
-/* ===== CHATBOT WIDGET ===== */
+/* =============================================================
+   CHATBOT WIDGET — chatbot.css
+   Criado por: Claude (IA) + Arthur
+   -
+   Descrição: Estilos completos do widget de chat flutuante.
+   Inclui: balão de chamada, botão toggle, janela do chat,
+   mensagens, grupos de tópicos, chips de pergunta,
+   barra de ações (voltar/encerrar), campo de input,
+   tema claro/escuro via CSS custom properties e responsivo.
+   -
+   NÃO edite este arquivo sem avisar o Arthur,
+   pois ele afeta o chatbot inteiro.
+   ============================================================= */
 
 /* ---------- Wrapper flutuante ---------- */
 #chatbot-wrapper {
@@ -77,7 +89,12 @@
   justify-content: center;
 }
 
-/* ===== JANELA DO CHAT ===== */
+/* ===== JANELA DO CHAT =====
+   Altura fixa de 520px garante que nada seja cortado.
+   Toda a rolagem ocorre apenas em #chatbot-messages.
+   CSS custom properties centralizam todas as cores —
+   basta trocar as vars do bloco .dark para ajustar o tema escuro.
+   ===== */
 #chatbot-window {
   display: none;
   flex-direction: column;
@@ -411,12 +428,102 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------- Responsivo ---------- */
+/* ---------- Responsivo ----------
+   Implementado por Claude + Arthur.
+   Breakpoints: 767px · 480px · 360px
+   - 767px: janela expande para quase full-width, balão menor
+   - 480px: safe-area-inset para iPhones com notch/gesture bar;
+            font-size 16px no input impede zoom automático no iOS;
+            touch targets de no mínimo 44px nos chips e grupos
+   - 360px: ajustes compactos para telas muito pequenas
+   ---------------------------------------- */
+
+/* Tablet (≤ 767px) — janela expande, posição recua */
+@media (max-width: 767px) {
+  #chatbot-wrapper {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  #chatbot-window {
+    width: calc(100vw - 28px);
+    /* svh = small viewport height: exclui barra do browser no celular */
+    height: 500px;
+    max-height: calc(100svh - 110px);
+    max-height: calc(100vh  - 110px); /* fallback para browsers sem svh */
+  }
+
+  #chatbot-bubble {
+    max-width: 188px;
+    font-size: 12.5px;
+    padding: 9px 13px;
+  }
+}
+
+/* Mobile padrão (≤ 480px) */
 @media (max-width: 480px) {
+  #chatbot-wrapper {
+    right: 10px;
+    /* safe-area-inset-bottom: evita sobreposição com gestos/barra de home */
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
   #chatbot-window {
     width: calc(100vw - 20px);
-    height: calc(100vh - 100px);
-    max-height: 560px;
+    height: calc(100svh - 100px);
+    height: calc(100vh  - 100px); /* fallback */
+    max-height: 520px;
   }
-  #chatbot-wrapper { right: 10px; bottom: 14px; }
+
+  /* iOS: font-size ≥ 16px impede o zoom automático ao focar o input */
+  #chatbot-input {
+    font-size: 16px;
+    padding: 9px 12px;
+  }
+
+  #chatbot-input-row {
+    padding: 8px 10px;
+  }
+
+  #chatbot-header {
+    padding: 11px 13px;
+  }
+
+  /* Touch targets confortáveis (mínimo 44px de área clicável) */
+  .cb-chip {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .cb-group-btn {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
+
+/* Celulares muito pequenos (≤ 360px) */
+@media (max-width: 360px) {
+  #chatbot-wrapper {
+    right: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  #chatbot-window {
+    width: calc(100vw - 16px);
+  }
+
+  #chatbot-toggle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cb-info strong { font-size: 12px; }
+
+  #cb-theme-btn {
+    font-size: 10px;
+    padding: 4px 7px;
+  }
+
+  .cb-group-title { font-size: 12.5px; }
+  .cb-chip        { font-size: 12px; }
 }
