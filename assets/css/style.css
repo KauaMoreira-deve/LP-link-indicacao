@@ -1377,21 +1377,21 @@
 .steps-one .dots-layer .dot-one {
 	position: absolute;
 	left: 22%;
-	top: 8%;
-	width: 8px;
-	height: 8px;
+	top: 7%;
+	width: 15px;
+	height: 15px;
 	border-radius: 50px;
-	background-color: var(--white-color);
+	background-color: #00A8FF;
 }
 
 .steps-one .dots-layer .dot-two {
 	position: absolute;
-	left: 42%;
+	left: 40%;
 	bottom: 2px;
-	width: 8px;
-	height: 8px;
+	width: 15px;
+	height: 15px;
 	border-radius: 50px;
-	background-color: var(--white-color);
+	background-color: #ff6913;
 }
 
 .steps-one .column:nth-child(2n + 0) {

@@ -603,7 +603,7 @@
 .main-header .main-menu .navigation > li:hover > a,
 .main-header .main-menu .navigation > li.current > a{
 	opacity:1;
-	color: var(--main-color);
+	color:#00A8FF;
 }
 
 .main-header .main-menu .navigation > li > ul{

@@ -170,13 +170,13 @@ body {
 	line-height:1.6em;
 	font-weight:400;
 	font-size:14px;
-	
+	background-color: #2e2e2e;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 }
 
 .background-fixed{
-	background-color: #f1f1f1;
+	background-color: var(--color-two);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
